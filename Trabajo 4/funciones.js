@@ -1,10 +1,10 @@
-function ordenar(params) {
+function ordenar() {
     let miArray = [99, 4, 43, 93, 1]
     miArray.sort()
     console.log(miArray)
 }
 
-function mayores(params) {
+function mayores() {
     let miArray = [99, 4, 43, 93, 1]
     let mayores = []
     miArray.forEach(Element => {
@@ -15,11 +15,11 @@ function mayores(params) {
     console.log(mayores)
 }
 
-function pares(params) {
+function pares() {
     let miArray = [99, 4, 43, 93, 1]
     let pares = []
     miArray.forEach(Element => {
-        if(Element % 2 ==0){
+        if(Element % 2 == 0) {
             pares.push(Element)
         }
     });

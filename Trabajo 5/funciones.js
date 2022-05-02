@@ -26,8 +26,18 @@ const persona3 = {
     }
 }
 const mostrarPersona = {
+    mayores: function () {
+        let mayores = "";
+        if (persona1.edad >= 18) {
+            mayores += (persona1.nombreCompleto()) + "; ";
+        }
+        if (persona2.edad >= 18) {
+            mayores += (persona2.nombreCompleto()) + "; ";
+        }
+        if (persona3.edad >= 18) {
+            mayores += (persona3.nombreCompleto()) + "; ";
+        }
+        return mayores;
+    }
 }
-console.log(persona1.nombreCompleto())
-console.log(persona2.nombreCompleto())
-console.log(persona3.nombreCompleto())
-//mostrar mayores de 18 con una funcion en la constante mostrarPersona
+console.log(`Las personas mayores de edad son: `, mostrarPersona.mayores())
