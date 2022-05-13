@@ -57,7 +57,6 @@ function old() {
     }
 }
 
-function clear() {
+function clearHeroes() {
   document.getElementById(`sh`).innerHTML = `Nombre: `
 }
-//borrar lo escrito por la funcion anterior
