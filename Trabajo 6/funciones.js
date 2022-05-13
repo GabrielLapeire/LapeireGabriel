@@ -60,3 +60,4 @@ function old() {
 function clearHeroes() {
   document.getElementById(`sh`).innerHTML = `Nombre: `
 }
+//mostrar nombre, fecha de fundacion y ubicacion del escuadron y en 3 tablas los datos de 3 heroes
