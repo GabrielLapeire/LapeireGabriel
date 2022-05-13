@@ -51,15 +51,13 @@ let superHeroes = {
 
 function old() {
     for (let i = 0; i < superHeroes.members.length; i++) {
-        if (superHeroes.members[i].age > 100) {
-            let h2 = document.getElementById(`sh`)
-            h2.innerHTML = `Nombre: ${superHeroes.members[i].name}`
-        }
+      if (superHeroes.members[i].age > 100) {
+        document.getElementById(`sh`).innerHTML = `Nombre: ${superHeroes.members[i].name}`
+      }
     }
 }
 
 function clear() {
-    let h2 = document.getElementById(`sh`)
-    h2.innerHTML = `Nombre: `
+  document.getElementById(`sh`).innerHTML = `Nombre: `
 }
 //borrar lo escrito por la funcion anterior
