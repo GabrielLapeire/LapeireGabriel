@@ -39,6 +39,7 @@ let superHeroes = {
           }
         ]
 }
+
 //console.log(superHeroes.members[2].powers[2])
 //for (let i = 0; i < superHeroes.members.length; i++) {
 //    let j = i
@@ -49,15 +50,83 @@ let superHeroes = {
 //    }
 //}
 
-function old() {
-    for (let i = 0; i < superHeroes.members.length; i++) {
-      if (superHeroes.members[i].age > 100) {
-        document.getElementById(`sh`).innerHTML = `Nombre: ${superHeroes.members[i].name}`
-      }
-    }
+//function old() {
+//    for (let i = 0; i < superHeroes.members.length; i++) {
+//      if (superHeroes.members[i].age > 100) {
+//        document.getElementById(`sh`).innerHTML = `Nombre: ${superHeroes.members[i].name}`
+//      }
+//    }
+//}
+
+function info() {
+  document.getElementById(`div1`).innerHTML =
+  `<h3>Nombre del equipo: ${superHeroes.squadName}</h3>
+  <h3>Fecha de fundación: ${superHeroes.formed}</h3>
+  <h3>Localización: ${superHeroes.homeTown}, ${superHeroes.secretBase}</h3>
+  <h3>Miembros: </h3>`
+  document.getElementById(`div2`).innerHTML =
+  `<table border="2">
+    <tr>
+      <td>Nombre</td>
+      <td>${superHeroes.members[0].name}</td>
+    </tr>
+    <tr>
+      <td>Edad</td>
+      <td>${superHeroes.members[0].age}</td>
+    </tr>
+    <tr>
+      <td>Identidad secreta</td>
+      <td>${superHeroes.members[0].secretIdentity}</td>
+    </tr>
+    <tr>
+      <td>Poderes</td>
+      <td>${superHeroes.members[0].powers}</td>
+    </tr>
+  </table>
+  <table border="2">
+    <tr>
+      <td>Nombre</td>
+      <td>${superHeroes.members[1].name}</td>
+    </tr>
+    <tr>
+      <td>Edad</td>
+      <td>${superHeroes.members[1].age}</td>
+    </tr>
+    <tr>
+      <td>Identidad secreta</td>
+      <td>${superHeroes.members[1].secretIdentity}</td>
+    </tr>
+    <tr>
+      <td>Poderes</td>
+      <td>${superHeroes.members[1].powers}</td>
+    </tr>
+  </table>
+  <table border="2">
+    <tr>
+      <td>Nombre</td>
+      <td>${superHeroes.members[2].name}</td>
+    </tr>
+    <tr>
+      <td>Edad</td>
+      <td>${superHeroes.members[2].age}</td>
+    </tr>
+    <tr>
+      <td>Identidad secreta</td>
+      <td>${superHeroes.members[2].secretIdentity}</td>
+    </tr>
+    <tr>
+      <td>Poderes</td>
+      <td>${superHeroes.members[2].powers}</td>
+    </tr>
+  </table>`
 }
 
 function clearHeroes() {
-  document.getElementById(`sh`).innerHTML = `Nombre: `
+  document.getElementById(`div1`).innerHTML =
+  `<h3>Nombre del equipo: </h3>
+  <h3>Fecha de fundación: </h3>
+  <h3>Localización: </h3>
+  <h3>Miembros: </h3>`
+  document.getElementById(`div2`).innerHTML =
+  ``
 }
-//mostrar nombre, fecha de fundacion y ubicacion del escuadron y en 3 tablas los datos de 3 heroes
