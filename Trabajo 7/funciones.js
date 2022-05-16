@@ -8,7 +8,6 @@ function sol() {
     <p>Sexo: ${data.results[0].gender}</p>
     <p>Edad: ${data.results[0].dob.age}</p>
     <p>Email: ${data.results[0].email}</p>
-    <p>Foto: ${data.results[0].picture.large}</p>`
+    <p>Foto: <img src="${data.results[0].picture.large}"></p>`
   })
 }
-//corregir foto
