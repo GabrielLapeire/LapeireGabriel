@@ -1,8 +1,15 @@
+function inicializar(){
+  var aux = L.DomUtil.get('map');
+  if(aux != null){
+      aux._leaflet_id = null;
+  }
+}
+
 function sol() {
   fetch ('https://randomuser.me/api')
   .then (res => res.json())
   .then (data => {
-    if (data.results[0].gender == "female" && data.results[0].dob.age > 20 && data.results[0].dob.age < 40) {
+    if (data.results[0].gender == "female" && data.results[0].dob.age > 19 && data.results[0].dob.age < 41) {
       document.getElementById(`user`).innerHTML =
       `<p>Nombre: ${data.results[0].name.first}</p>
       <p>Apellido: ${data.results[0].name.last}</p>
@@ -12,6 +19,7 @@ function sol() {
       <p>Foto: <img src="${data.results[0].picture.large}"></p>
       <p>Latitud: ${data.results[0].location.coordinates.latitude}</p>
       <p>Longitud: ${data.results[0].location.coordinates.longitude}</p>`
+      inicializar()
       var map = L.map('map').setView([data.results[0].location.coordinates.latitude, data.results[0].location.coordinates.longitude], 13);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -19,9 +27,11 @@ function sol() {
       }).addTo(map);
       var marker = L.marker([data.results[0].location.coordinates.latitude, data.results[0].location.coordinates.longitude]).addTo(map);
     } else {
+      inicializar()
       document.getElementById(`user`).innerHTML =
       `No existe el usuario`
+      document.getElementById(`map`).innerHTML =
+      ``
     }
   })
 }
-
