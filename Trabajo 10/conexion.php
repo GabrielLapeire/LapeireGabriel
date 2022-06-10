@@ -22,8 +22,8 @@ $consulta1 = mysqli_query($conexion, $sql1);
 $res1 = mysqli_fetch_array($consulta1);
 
 if ((!empty($res1))) {
-    echo "sesion iniciada";
+    echo "Sesion iniciada";
 } else {
-    echo "el usuario no existe";
+    echo "Usuario o contraseña incorrectos";
 }
 ?>
