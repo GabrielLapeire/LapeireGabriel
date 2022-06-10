@@ -15,15 +15,21 @@ $fila = mysqli_fetch_array($resultado);
 //}
 
 $usuario = $_POST['user'];
-//$pw = $_POST['pw'];
-//echo $usuario."<br>".$cont."<br>";
+$pw = $_POST['pw'];
 
-$consulta1 = "select * from personas where dni =".$usuario;
-$resultado1 = mysqli_query($conexion, $consulta1);
-$fila1 = mysqli_fetch_array($resultado1);
+$sql1 = "select * from personas where dni =".$usuario;
+$consulta1 = mysqli_query($conexion, $sql1);
+$res1 = mysqli_fetch_array($consulta1);
+$sql2 = "select * from personas where password =".$pw;
+$consulta2 = mysqli_query($conexion, $sql2);
+$res2 = mysqli_fetch_array($consulta2);
 
-if ((!empty($fila1))) {
-    echo "sesion iniciada";
+if ((!empty($res1))) {
+    if (!empty($res2)) {
+        echo "sesion iniciada";
+    } else {
+        echo "contraseña incorrecta";
+    }
 } else {
     echo "el usuario no existe";
 }
