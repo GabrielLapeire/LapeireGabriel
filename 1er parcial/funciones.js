@@ -39,49 +39,41 @@ let socios =[
     socio3,
     socio4,
     socio5
-]
+];
 
 function buscar() {
     let dni = document.getElementById('dni').value
-    console.log(dni)
     let res = document.getElementById('res')
     let aux = false;
     socios.forEach(element => {
-        console.log(element.dni)
         if (element.dni == dni) {
-            console.log('existe');
             aux = true;
-        }
-    });
-
-    if (!aux) {
-        console.log('no existe')
-    }
-
-    for (let i = 0; i < 6; i++) {
-        if (dni == socio+[i].dni) {
-        if (socio+[i].facturas < 4) {
+            if (element.facturas < 4) {
             res.innerHTML =
-        `<p style="background-color: green">Nombre: ${socio+[i].nombre}<br>Facturas: ${socio+[i].facturas}</p>`
+        `<p style="background-color: green">Nombre: ${element.nombre}<br>Facturas: ${element.facturas}</p>`
         }
-        if (socio1.facturas > 3 && socio1.facturas < 7) {
+        if (element.facturas > 3 && element.facturas < 7) {
             res.innerHTML =
-        `<p style="background-color: yellow">Nombre: ${socio1.nombre}<br>Facturas: ${socio1.facturas}</p>`
+        `<p style="background-color: yellow">Nombre: ${element.nombre}<br>Facturas: ${element.facturas}</p>`
         }
-        if (socio1.facturas > 6) {
+        if (element.facturas > 6) {
             res.innerHTML =
-        `<p style="background-color: red">Nombre: ${socio1.nombre}<br> Facturas: ${socio1.facturas}</p>`
+        `<p style="background-color: red">Nombre: ${element.nombre}<br> Facturas: ${element.facturas}</p>`
         }
-    } else {
+        } else {
+        if (!aux) {
         res.innerHTML =
         `<p style="background-color: red">No existe un socio con este DNI</p>`
-    }
-    }
-}
+        }
+        }
+    })
+};
+
 function reset() {
     document.getElementById('res').innerHTML =
     ``
-}
+};
+
 //se necesita buscar por dni si el socio existe, en caso de no existir mostrar en rojo "no existe"
 //si existe, evaluar lo siguiente:
 //si tiene no mas de 3 facturas mostrar en verde, entre 4 y 6 amarillo, mas de 6 rojo
