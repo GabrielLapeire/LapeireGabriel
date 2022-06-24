@@ -2,22 +2,22 @@ const socio1 ={
     apellido: "Parra",
     nombre: "Javier",
     edad: 41,
-    facturas: 1,
-    dni: 28358603
+    facturas: 2,
+    dni: 1
 };
 const socio2 ={
     apellido: "Lapeire",
     nombre: "Gabriel",
     edad: 20,
-    facturas: 5,
-    dni: 44164066
+    facturas: 4,
+    dni: 2
 };
 const socio3 ={
     apellido: "Puccio",
     nombre: "Soledad",
     edad: 35,
-    facturas: 3,
-    dni: 32324455
+    facturas: 7,
+    dni: 3
 };
 const socio4 ={
     apellido: "Otero",
@@ -44,26 +44,30 @@ let socios =[
 function buscar() {
     let dni = document.getElementById('dni').value
     let res = document.getElementById('res')
-    let aux = false;
+    let existe = false;
+    let color = String;
+    let caja = "padding:15px; margin-inline:180px"
     socios.forEach(element => {
         if (element.dni == dni) {
-            aux = true;
-            if (element.facturas < 4) {
-            res.innerHTML =
-        `<p style="background-color: green">Nombre: ${element.nombre}<br>Facturas: ${element.facturas}</p>`
+            existe = true;
+        if (element.facturas < 4) {
+            color = "green";
         }
         if (element.facturas > 3 && element.facturas < 7) {
-            res.innerHTML =
-        `<p style="background-color: yellow">Nombre: ${element.nombre}<br>Facturas: ${element.facturas}</p>`
+            color = "yellow";
         }
         if (element.facturas > 6) {
-            res.innerHTML =
-        `<p style="background-color: red">Nombre: ${element.nombre}<br> Facturas: ${element.facturas}</p>`
+            color = "red";
         }
-        } else {
-        if (!aux) {
         res.innerHTML =
-        `<p style="background-color: red">No existe un socio con este DNI</p>`
+        `<p style="background-color:${color}; ${caja};">
+        Nombre: ${element.nombre}<br>Facturas: ${element.facturas}</p>`;
+        } else {
+        if (!existe) {
+            color = "red"
+        res.innerHTML =
+        `<p style="background-color:${color}; ${caja};">
+        No existe un socio con este DNI</p>`;
         }
         }
     })
@@ -71,7 +75,7 @@ function buscar() {
 
 function reset() {
     document.getElementById('res').innerHTML =
-    ``
+    ``;
 };
 
 //se necesita buscar por dni si el socio existe, en caso de no existir mostrar en rojo "no existe"
