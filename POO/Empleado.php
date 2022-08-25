@@ -8,26 +8,26 @@ class Empleado {
     public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
-    public function getZona() {
-        return $this->zona;
+    public function getNombre() {
+        return $this->nombre;
     }
-    public function setZona($zona) {
-        $this->zona = $zona;
+    public function setApellido($apellido) {
+        $this->apellido = $apellido;
     }
-    public function getZona() {
-        return $this->zona;
+    public function getApellido() {
+        return $this->apellido;
     }
-    public function setZona($zona) {
-        $this->zona = $zona;
+    public function setEdad($edad) {
+        $this->edad = $edad;
     }
-    public function getZona() {
-        return $this->zona;
+    public function getEdad() {
+        return $this->edad;
     }
-    public function setZona($zona) {
-        $this->zona = $zona;
+    public function setSalario($salario) {
+        $this->salario = $salario;
     }
-    public function getZona() {
-        return $this->zona;
+    public function getSalaro() {
+        return $this->salario;
     }
     public function __construct($nombre, $apellido, $edad, $salario) {
         $this->nombre = $nombre;
