@@ -3,6 +3,20 @@ require_once 'Empleado.php';
 require_once 'Repartidor.php';
 require_once 'Comercial.php';
 
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$edad = $_POST['edad'];
+$salario = $_POST['salario'];
+$comision = $_POST['comision'];
+$zona = $_POST['zona'];
+
+echo "<strong>Nombre: </strong>".$nombre."<br>";
+echo "<strong>Apellido: </strong>".$apellido."<br>";
+echo "<strong>Edad: </strong>".$edad."<br>";
+echo "<strong>Salario: </strong>".$salario."<br>";
+echo "<strong>Comision: </strong>".$comision."<br>";
+echo "<strong>Zona: </strong>".$zona."<br>";
+
 $repartidor = new Repartidor('Gabriel', 'Lapeire', 24, 100);
 $repartidor->setZona('A');
 echo $repartidor->plus();
