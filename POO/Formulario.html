@@ -13,11 +13,24 @@
             Apellido: <input name="apellido" type="text"><br>
             Edad: <input name="edad" type="number"><br>
             Salario: <input name="salario" type="number"><br>
-            <select name="tipo">
-                <option value="repartidor"></option>
-                <option value="comercial"></option>
+            <select name="tipo" onchange="prueba(this.value)">
+                <option value="comercial">
+                    comercial
+                </option>
+                <option value="repartidor">
+                    repartidor
+                </option>
+            </select>
             <input type="submit">
         </form>
     </div>
 </body>
 </html>
+
+<script>
+function prueba(valor) {
+    alert(valor)
+    //agregar imput comision/zona
+}
+
+</script>
