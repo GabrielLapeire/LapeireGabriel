@@ -9,16 +9,18 @@ trait Producto {
         $this->intStock = $Stock;
     }
     public function getProducto() {
-        $strInfo = "
-        Producto: {$this->strProducto}<br>
-        Precio: {$this->fltPrecio}<br>
-        Stock: {$this->intStock}<br>";
-        return $strInfo;
-        echo "<br>";
+        if ($this->intStock < 0) {
+            echo "<br>No hay stock suficiente para realizar la compra<br>";
+        } else {
+            $strInfo = "
+            Producto: {$this->strProducto}<br>
+            Precio: {$this->fltPrecio}<br>
+            Stock: {$this->intStock}<br>";
+            return $strInfo."<br>";
+        }
     }
     public function setStock(int$Cantidad) {
         $this->intStock = $this->intStock - $Cantidad;
-        echo "<br>";
     }
 }
 ?>

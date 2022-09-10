@@ -9,18 +9,14 @@
 <body>
     <div>
         <form name="form" method="post" action="index.php">
-            Nombre: <input name="nombre" type="text"><br>
-            Apellido: <input name="apellido" type="text"><br>
-            Edad: <input name="edad" type="number"><br>
-            Salario: <input name="salario" type="number"><br>
-            <select name="tipo" onchange="prueba(this.value)">
-                <option value="comercial">
-                    comercial
-                </option>
-                <option value="repartidor">
-                    repartidor
-                </option>
-            </select>
+            <strong>Nombre: </strong><input type="text" name="nombre" required><br>
+            <strong>Apellido: </strong><input type="text" name="apellido" required><br>
+            <strong>Edad: </strong><input type="number" name="edad" required><br>
+            <strong>Salario: </strong><input type="number" name="salario" required><br>
+            <strong>Puesto: </strong><select name="puesto" id="puesto"></select><br>
+            <div id="div">
+                <strong>Zona: </strong><input type="text" name="zona" required>
+            </div><br>
             <input type="submit">
         </form>
     </div>
@@ -28,8 +24,23 @@
 </html>
 
 <script>
-function prueba(valor) {
-    alert(valor)
-    //agregar imput comision/zona
-}
+let puesto = document.getElementById(`puesto`)
+let div = document.getElementById(`div`)
+
+const PUESTOS = ["repartidor", "comercial"]
+PUESTOS.forEach(item => {
+    puesto.innerHTML += `<option value="${item}">${item}</option>`;
+})
+
+puesto.addEventListener("change", () => {
+    switch (puesto.value) {
+        case "repartidor":
+            div.innerHTML = `<strong>Zona: </strong><input type="text" name="zona" required>`
+            break;
+    
+        case "comercial":
+            div.innerHTML = `<strong>Comision: </strong><input type="number" name="comision" required>`
+            break;
+    }
+})
 </script>

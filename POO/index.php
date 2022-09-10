@@ -7,24 +7,28 @@ $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $edad = $_POST['edad'];
 $salario = $_POST['salario'];
-$comision = $_POST['comision'];
-$zona = $_POST['zona'];
+$comision = $_POST['comision'] ?? NULL;
+$zona = $_POST['zona'] ?? NULL;
 
 echo "<strong>Nombre: </strong>".$nombre."<br>";
 echo "<strong>Apellido: </strong>".$apellido."<br>";
 echo "<strong>Edad: </strong>".$edad."<br>";
 echo "<strong>Salario: </strong>".$salario."<br>";
-echo "<strong>Comision: </strong>".$comision."<br>";
-echo "<strong>Zona: </strong>".$zona."<br>";
+if (isset ($comision)) {
+    echo "<strong>Comision: </strong>".$comision."<br>";
+} else {
+    echo "<strong>Zona: </strong>".$zona."<br>";
+}
 
-$repartidor = new Repartidor('Gabriel', 'Lapeire', 24, 100);
-$repartidor->setZona('A');
-echo $repartidor->plus();
-echo "<br>";
-
-$comercial = new Comercial('Gabriel', 'Lapeire', 31, 201);
-$comercial->setComision(100);
-echo $comercial->plus();
+if (isset ($comision)) {
+    $comercial = new Comercial($nombre, $apellido, $edad, $salario);
+    $comercial->setComision($comision);
+    echo $comercial->plus();
+} else {
+    $repartidor = new Repartidor($nombre, $apellido, $edad, $salario);
+    $repartidor->setZona($zona);
+    echo $repartidor->plus();
+}
 
 
 //Se solicita hacer un programa que gestione empleados, los empleados tendran nombre, apellido,
