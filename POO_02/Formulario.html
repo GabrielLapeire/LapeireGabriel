@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form name="form" method="post" action="index.php">
+            <strong>Nombre: </strong><input type="text" name="nombre" required><br>
+            <strong>Apellido: </strong><input type="text" name="apellido" required><br>
+            <strong>DNI: </strong><input type="number" name="DNI" required><br>
+            <strong>Tipo: </strong><select name="tipo" id="tipo"></select><br>
+            <div id="div">
+                <strong>Arancel: </strong>
+            </div><br>
+            <strong>Fecha de nacimiento: </strong><input type="date" name="fecNac" required><br>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+let tipo = document.getElementById(`tipo`)
+let div = document.getElementById(`div`)
+
+const TIPOS = ["Docente", "Alumno"]
+TIPOS.forEach(item => {
+    tipo.innerHTML += `<option value="${item}">${item}</option>`;
+})
+
+tipo.addEventListener("change", () => {
+    let arancel = Number;
+    switch (tipo.value) {
+        case "Docente":
+            arancel = 1000;
+            div.innerHTML = `<strong>Arancel: </strong>${arancel}`
+            break;
+        case "Alumno":
+            arancel = 500;
+            div.innerHTML = `<strong>Arancel: </strong>${arancel}`
+            break;
+    }
+})
+
+//mostrar datos
+//alumno paga 500 de arancel
+//docente paga 1000 de arancel
+//si es docente y tiene 40 años o mas-> 10% de descuento de arancel
+//si es alumno y tiene 25 años o menos-> 20% de descuento de arancel
+//si es cumpleañps de alumno, no paga arancel
+//si es cumpleaños de docente, paga x2
+//mostrar edad
+</script>
