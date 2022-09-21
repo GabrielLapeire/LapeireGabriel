@@ -18,9 +18,12 @@ echo "<strong>Fecha de nacimiento: </strong>".$fecNac."<br>";
 
 if ($tipo = "Alumno") {
     $alumno = new Alumno($nombre, $apellido, $dni, $fecNac);
+    echo $alumno->edad($fecNac);
     echo $alumno->arancel();
+
 } else {
     $docente = new Docente($nombre, $apellido, $dni, $fecNac);
+    echo $docente->edad($fecNac);
     echo $docente->arancel();
 }
 ?>

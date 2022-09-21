@@ -11,8 +11,7 @@ class Tienda {
             die;
         } else {
             $infoCarrito = "
-            <hr>Carrito</hr>
-            <hr>
+            <hr>Carrito<hr>
             Producto: {$this->strProducto}<br>
             Cantidad: {$this->intCantidad}<br>
             Precio: {$this->fltPrecio}<br>
