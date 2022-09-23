@@ -6,16 +6,16 @@ class Docente extends Persona{
     public function arancel($arancel) {
         $edad = $this->edad($this->fecNac);
         $cumpleanios = $this->cumpleanios($this->fecNac);
-        $ahora = new DateTime(date("Y-m-d"));
+        $ahora = new DateTime();
         $ahora = $ahora->format("m-d");
+        $arancelFinal = $arancel;
         if ($cumpleanios == $ahora) {
-            $arancel = $arancel * 2;
+            $arancelFinal = $arancelFinal * 2;
         }
         if ($edad >= 40) {
-            $arancel = $arancel * 0.9;
-        } else {
-            echo "sin descuento";
+            $arancelFinal = $arancelFinal * 0.9;
         }
+        return $arancelFinal;
     }
 }
 ?>

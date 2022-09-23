@@ -10,7 +10,7 @@ $tipo = $_POST['tipo'];
 $arancel = $_POST['arancel'];
 $fecNac = $_POST['fecNac'];
 
-if ($tipo = "Alumno") {
+if ($tipo == "Alumno") {
     $alumno = new Alumno($nombre, $apellido, $dni, $fecNac);
     $edad = $alumno->edad($alumno->fecNac);
     if ($edad < 18) {
@@ -18,7 +18,7 @@ if ($tipo = "Alumno") {
         die;
     }
     $cumpleanios = $alumno->cumpleanios($alumno->fecNac);
-    echo $alumno->arancel($arancel);
+    $arancelFinal = $alumno->arancel($arancel);
 } else {
     $docente = new Docente($nombre, $apellido, $dni, $fecNac);
     $edad = $docente->edad($docente->fecNac);
@@ -27,15 +27,16 @@ if ($tipo = "Alumno") {
         die;
     }
     $cumpleanios = $docente->cumpleanios($docente->fecNac);
-    echo $docente->arancel($arancel);
+    $arancelFinal = $docente->arancel($arancel);
 }
 
 echo "<strong>Nombre: </strong>".$nombre."<br>";
 echo "<strong>Apellido: </strong>".$apellido."<br>";
 echo "<strong>DNI: </strong>".$dni."<br>";
 echo "<strong>Tipo: </strong>".$tipo."<br>";
+echo "<strong>Arancel: </strong>".$arancel."<br>";
 echo "<strong>Fecha de nacimiento: </strong>".$fecNac."<br>";
 echo "<strong>Cumpleanios: </strong>".$cumpleanios."<br>";
 echo "<strong>Edad: </strong>".$edad."<br>";
-echo "<strong>Arancel final: </strong>".$arancel."<br>";
+echo "<strong>Arancel final: </strong>".$arancelFinal."<br>";
 ?>
