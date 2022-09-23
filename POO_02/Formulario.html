@@ -15,7 +15,7 @@
             <strong>Tipo: </strong><select name="tipo" id="tipo"></select><br>
             <div id="div">
                 <strong>Arancel: </strong>
-            </div><br>
+            </div>
             <strong>Fecha de nacimiento: </strong><input type="date" name="fecNac" required><br>
             <input type="submit">
         </form>
@@ -37,15 +37,18 @@ tipo.addEventListener("change", () => {
     switch (tipo.value) {
         case "Docente":
             arancel = 1000;
-            div.innerHTML = `<strong>Arancel: </strong>${arancel}`
             break;
         case "Alumno":
             arancel = 500;
-            div.innerHTML = `<strong>Arancel: </strong>${arancel}`
             break;
     }
+    div.innerHTML = `
+        <strong>Arancel: </strong><select name="arancel" id="arancel">
+        <option value="${arancel}">${arancel}</option>
+        </select>`
 })
 
+//menor de 18 no puede usar el sistema
 //mostrar datos
 //alumno paga 500 de arancel
 //docente paga 1000 de arancel

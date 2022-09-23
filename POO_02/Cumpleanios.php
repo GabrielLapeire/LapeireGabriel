@@ -5,9 +5,12 @@ trait Cumpleanios {
         $ahora = new DateTime(date("Y-m-d"));
         $diferencia = $ahora->diff($nacimiento);
         $edad = $diferencia->format("%y");
-        $cumpleanios = $diferencia->format("%m/%d");
-        echo "<strong>Edad: </strong>".$edad."<br>";
-        echo "<strong>Cumpleanios: </strong>".$cumpleanios."<br>";
+        return $edad;
+    }
+    public function cumpleanios($fecNac) {
+        $nacimiento = new DateTime($fecNac);
+        $cumpleanios = $nacimiento->format("m-d");
+        return $cumpleanios;
     }
 }
 ?>
