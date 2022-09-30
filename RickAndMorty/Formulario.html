@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="Funciones.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,13 @@
 <body>
     <div>
         <form name="form" method="post" action="index.php">
-            <strong>ID: </strong><input type="text" name="pj" required> de 826<br>
+            <strong>ID: </strong><input type="number" name="id" id="id_pj" required> de 826<br>
+            <input type="button" value="buscar" onclick="sol()">
+            <input type="button" value="reiniciar" onclick="reset()">
             <input type="submit" value="Consultar">
         </form>
+        <div id="res">
+        </div>
     </div>
 </body>
 </html>
