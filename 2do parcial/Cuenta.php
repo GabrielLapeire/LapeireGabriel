@@ -29,8 +29,10 @@ class Cuenta {
         }
     }
     public function retirar($cantidad) {
-        $this->cantidad = $this->cantidad - $cantidad;
-        echo "Cantidad post retiro: ".$this->cantidad."<br>";
+        if ($cantidad > 0) {
+            $this->cantidad = $this->cantidad - $cantidad;
+            echo "Cantidad post retiro: ".$this->cantidad."<br>";
+        }
     }
 }
 ?>
