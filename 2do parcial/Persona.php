@@ -37,6 +37,11 @@ class Persona {
         } else {
             $mayoriaDeEdad = false;
         }
+        if ($mayoriaDeEdad == true) {
+            $mayoriaDeEdad = "si";
+        } else {
+            $mayoriaDeEdad = "no";
+        }
         echo "Mayoria de edad: ".$mayoriaDeEdad."<br>";
     }
 }

@@ -3,23 +3,41 @@ require_once 'Persona.php';
 require_once 'Cuenta.php';
 require_once 'CuentaJoven.php';
 
-echo "<hr>Persona<hr>";
-$persona = new Persona("Gabriel", 20, 44164066);
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$dni = $_POST['DNI'];
+$edad = $_POST['edad'];
+$monto = $_POST['monto'];
+$transaccion = $_POST['transaccion'];
+$operacion = $_POST['operacion'];
+const BONO = 1.2;
+
+$persona = new Persona($nombre." ".$apellido, $edad, $dni);
 $persona->mostrar();
 $persona->esMayorDeEdad();
+echo "<hr>";
 
-echo "<br>";
-
-echo "<hr>Cuenta<hr>";
-$cuenta = new Cuenta("Gabriel", 12000.50);
-$cuenta->mostrar();
-$cuenta->ingresar(500);
-$cuenta->retirar(13000.50);
-
-echo "<br>";
-
-echo "<hr>Cuenta Joven<hr>";
-$cuentaJoven = new CuentaJoven("Gabriel", 10000, 20);
-$cuentaJoven->esTitularValido(20);
-$cuentaJoven->mostrar();
+if ($edad < 18) {
+    echo "No es un usuario valido";
+    die;
+} elseif ($edad > 24) {
+    echo "Cuenta Senior <br>";
+    $cuenta = new Cuenta($nombre." ".$apellido, $monto);
+    $cuenta->mostrar();
+    if ($operacion == "ingreso") {
+        $cuenta->ingresar($transaccion);
+    } elseif ($operacion == "retiro") {
+        $cuenta->retirar($transaccion);
+    }
+} else {
+    echo "Cuenta Joven <br>";
+    $cuentaJoven = new CuentaJoven($nombre." ".$apellido, $monto, BONO);
+    $cuentaJoven->mostrarBonificacion();
+    $cuentaJoven->mostrar();
+    if ($operacion == "ingreso") {
+        $cuentaJoven->ingresar($transaccion * BONO);
+    } elseif ($operacion == "retiro") {
+        $cuentaJoven->retirar($transaccion);
+    }
+}
 ?>

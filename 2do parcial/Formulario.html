@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form name="form" method="post" action="index.php">
+            <strong>Nombre: </strong><input type="text" name="nombre" required><br>
+            <strong>Apellido: </strong><input type="text" name="apellido" required><br>
+            <strong>DNI: </strong><input type="number" name="DNI" required><br>
+            <strong>Edad: </strong><input type="number" name="edad" required><br>
+            <strong>Monto: </strong><input type="number" name="monto" required><br>
+            <strong>Transaccion: </strong><input type="number" name="transaccion">
+                <select name="operacion">
+                    <option value="null">elija una operacion</option>
+                    <option value="ingreso">ingreso</option>
+                    <option value="retiro">retiro</option>
+                </select><br>
+            <input type="submit" value="Estado de cuenta">
+        </form>
+    </div>
+</body>
+</html>

@@ -18,10 +18,15 @@ class CuentaJoven extends Cuenta {
         } else {
             $Validez = false;
         }
+        if ($Validez == true) {
+            $Validez = "si";
+        } else {
+            $Validez = "no";
+        }
         echo "Usuario valido: ".$Validez."<br>";
     }
-    public function mostrar() {
-        echo "Cuenta Joven ".$this->bonificacion."%";
+    public function mostrarBonificacion() {
+        echo "Bonificacion: X".$this->bonificacion."<br>";
     }
 }
 ?>
