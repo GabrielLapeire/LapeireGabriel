@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2022 a las 02:25:55
+-- Tiempo de generación: 21-10-2022 a las 23:44:23
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -29,15 +29,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `personajes` (
   `id` int(11) NOT NULL,
-  `Nombre` text COLLATE utf8_spanish2_ci NOT NULL,
-  `Estado` text COLLATE utf8_spanish2_ci NOT NULL,
-  `Especie` text COLLATE utf8_spanish2_ci NOT NULL,
-  `Tipo` text COLLATE utf8_spanish2_ci NOT NULL,
-  `Genero` text COLLATE utf8_spanish2_ci NOT NULL,
-  `Origen` text COLLATE utf8_spanish2_ci NOT NULL,
-  `Ubicación` text COLLATE utf8_spanish2_ci NOT NULL,
-  `Imagen` blob NOT NULL
+  `nombre` text COLLATE utf8_spanish2_ci NOT NULL,
+  `estado` text COLLATE utf8_spanish2_ci NOT NULL,
+  `especie` text COLLATE utf8_spanish2_ci NOT NULL,
+  `tipo` text COLLATE utf8_spanish2_ci NOT NULL,
+  `genero` text COLLATE utf8_spanish2_ci NOT NULL,
+  `origen` text COLLATE utf8_spanish2_ci NOT NULL,
+  `ubicacion` text COLLATE utf8_spanish2_ci NOT NULL,
+  `imagen` text COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `personajes`
+--
+
+INSERT INTO `personajes` (`id`, `nombre`, `estado`, `especie`, `tipo`, `genero`, `origen`, `ubicacion`, `imagen`) VALUES
+(1, 'Rick Sanchez', 'Alive', 'Human', '', 'Male', 'Earth (C-137)', 'Citadel of Ricks', 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'),
+(7, 'Abradolf Lincler', 'unknown', 'Human', 'Genetic experiment', 'Male', 'Earth (Replacement Dimension)', 'Testicle Monster Dimension', 'https://rickandmortyapi.com/api/character/avatar/7.jpeg');
 
 --
 -- Índices para tablas volcadas

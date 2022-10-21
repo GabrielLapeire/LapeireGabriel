@@ -10,11 +10,20 @@ function sol() {
         <p>Tipo: ${res.type}</p>
         <p>Genero: ${res.gender}</p>
         <p>Origen: ${res.origin.name}</p>
-        <p>Ubicación: ${res.location.name}</p>
-        <p>Imagen: <img src="${res.image}"></p>`
-        `<input type="hidden" name="nombre">
-        <input type="hidden" name="estado">
-        <input type="hidden" name="especie">`
+        <p>Ubicacion: ${res.location.name}</p>
+        <p>Imagen: <img src="${res.image}"></p><br>
+        <form name="form" method="post" action="conexion.php">
+            <input type="hidden" name="id" value="${id}">
+            <input type="hidden" name="nombre" value="${res.name}">
+            <input type="hidden" name="estado" value="${res.status}">
+            <input type="hidden" name="especie" value="${res.species}">
+            <input type="hidden" name="tipo" value="${res.type}">
+            <input type="hidden" name="genero" value="${res.gender}">
+            <input type="hidden" name="origen" value="${res.origin.name}">
+            <input type="hidden" name="ubicacion" value="${res.location.name}">
+            <input type="hidden" name="imagen" value="${res.image}"><br>
+            <input type="submit" value="Guardar">
+        </form>`
     })
 }
 

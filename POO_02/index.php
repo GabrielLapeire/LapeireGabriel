@@ -30,13 +30,15 @@ if ($tipo == "Alumno") {
     $arancelFinal = $docente->arancel($arancel);
 }
 
-echo "<strong>Nombre: </strong>".$nombre."<br>";
-echo "<strong>Apellido: </strong>".$apellido."<br>";
-echo "<strong>DNI: </strong>".$dni."<br>";
-echo "<strong>Tipo: </strong>".$tipo."<br>";
-echo "<strong>Arancel: </strong>".$arancel."<br>";
-echo "<strong>Fecha de nacimiento: </strong>".$fecNac."<br>";
-echo "<strong>Cumpleanios: </strong>".$cumpleanios."<br>";
-echo "<strong>Edad: </strong>".$edad."<br>";
-echo "<strong>Arancel final: </strong>".$arancelFinal."<br>";
+echo `<div align="center">
+<p>Nombre: </p>.$nombre."<br>".
+"<p>Apellido: </p>".$apellido."<br>".
+"<p>DNI: </p>".$dni."<br>".
+"<p>Tipo: </p>".$tipo."<br>".
+"<p>Arancel: </p>".$arancel."<br>".
+"<strong>Fecha de nacimiento: </strong>".$fecNac."<br>".
+"<strong>Cumpleanios: </strong>".$cumpleanios."<br>".
+"<strong>Edad: </strong>".$edad."<br>".
+"<strong>Arancel final: </strong>".$arancelFinal."<br>
+</div>`
 ?>
