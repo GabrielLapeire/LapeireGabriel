@@ -26,9 +26,9 @@ $imagen = $_POST['imagen'];
 
 $sql1 = "select * from personajes where id ='{$id}'";
 $consulta1 = mysqli_query($conexion, $sql1);
-$res1 = mysqli_fetch_array($consulta1);
+$res1 = $consulta1->num_rows;
 
-if ((empty($res1))) {
+if (($res1 == 0)) {
     //ingrear personaje
     $sql2 = $conexion->prepare(
         "INSERT INTO personajes (id, nombre, estado, especie, tipo, genero, origen, ubicacion, imagen)
