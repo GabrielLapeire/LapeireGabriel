@@ -30,15 +30,15 @@ if ($tipo == "Alumno") {
     $arancelFinal = $docente->arancel($arancel);
 }
 
-echo `<div align="center">
-<p>Nombre: </p>.$nombre."<br>".
-"<p>Apellido: </p>".$apellido."<br>".
-"<p>DNI: </p>".$dni."<br>".
-"<p>Tipo: </p>".$tipo."<br>".
-"<p>Arancel: </p>".$arancel."<br>".
-"<strong>Fecha de nacimiento: </strong>".$fecNac."<br>".
-"<strong>Cumpleanios: </strong>".$cumpleanios."<br>".
-"<strong>Edad: </strong>".$edad."<br>".
-"<strong>Arancel final: </strong>".$arancelFinal."<br>
-</div>`
+echo '<div align="center">'.
+        '<strong>Nombre: </strong>'.$nombre.'<br>'.
+        '<strong>Apellido: </strong>'.$apellido.'<br>'.
+        '<strong>DNI: </strong>'.$dni.'<br>'.
+        '<strong>Tipo: </strong>'.$tipo.'<br>'.
+        '<strong>Arancel: </strong>'.$arancel.'<br>'.
+        '<strong>Fecha de nacimiento: </strong>'.$fecNac.'<br>'.
+        '<strong>Cumpleanios: </strong>'.$cumpleanios.'<br>'.
+        '<strong>Edad: </strong>'.$edad.'<br>'.
+        '<strong style="background-color: yellow;">Arancel final: </strong>'.$arancelFinal.'<br>'.
+    '</div>';
 ?>
